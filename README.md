@@ -12,8 +12,8 @@ API Rest de canciones usando la base de datos MyDB de la PECL1, implementación 
 2. Instalar *Pyhton* y en la terminal instalar *Flask* `$ pip install flask`
 3. Instalar el conector de *PostgreSQL* con python *Psycopg2* `$ pip install psycopg2`
 4. Ejecutar el servidor flask
-Configuracion de la **conexión**:
 
+Configuracion de la **conexión**:
 
 ```python
 def conectar():
