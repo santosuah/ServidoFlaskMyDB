@@ -1,0 +1,111 @@
+
+swagger: "2.0"
+
+info:
+  description: API sencilla para aprender a crear APIs REST con OpenAPI documents\
+    \ en SWAGGER y a implementarlos con Python-Flask
+  version: 1.0.0
+  title: API Cansion
+
+host: localhost:8080
+
+basePath: /miAplicacion
+
+tags:
+- name: Canciones
+  description: Operaciones sobre las canciones
+
+schemes:
+- https
+
+paths:
+  /canciones:
+    get:
+      tags:
+      - Canciones
+      summary: Obtiene algunas canciones
+      description: Devuelve una lista con varias canciones
+      operationId: obtener_canciones
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - name: nCanciones
+        in: query
+        description: Numero de canciones devueltas
+        required: false
+        type: integer
+      responses:
+        200:
+          description: Una lista de canciones
+          schema:
+            $ref: "#/definitions/Canciones"
+      x-swagger-router-controller: swagger_server.controllers.cancion_controller
+
+  /cancion:
+    post:
+      tags:
+      - Canciones 
+      summary: Crea una cancion 
+      description: Añade una nueva cancion a la lista 
+      operationId: subir_canciones
+      consumes:
+        - "application/json"
+        - "application/xml"
+      produces:
+        - "application/json"
+        - "application/xml"
+      parameters:
+      - name: cancion
+        in: body 
+        description: La cancion creada 
+        required: true
+        schema:
+          $ref: "#/definitions/Cancion"
+      responses:
+        200:
+          description: Cancion creada 
+        400:
+          description: Cancion no ha podido ser creada 
+      x-swagger-router-controller: swagger_server.controllers.cancion_controller 
+
+  /cancion/{codigo}:
+    get:
+      tags:
+      - Canciones 
+      summary: Devuelve una cancion 
+      description: Devuelve una única cancion por su código
+      operationId: obtener_cancion_codigo
+      parameters:
+      - name: codigo
+        in: path
+        description: Numero de código de la cancion
+        required: true
+        type: integer
+      responses:
+        200:
+          description: Operación correcta 
+          schema:
+            $ref: "#/definitions/Cancion"
+        404:
+          description: La cancion no existe. 
+      x-swagger-router-controller: swagger_server.controllers.cancion_controller
+
+definitions:
+  Cancion:
+    type: object
+    properties:
+      codigo:
+        type: integer
+      titulo:
+        type: string
+      artista:
+        type: string
+      duracion:
+        type: number
+        format: float
+
+  Canciones:
+    type: array
+    items:
+      $ref: "#/definitions/Cancion"
