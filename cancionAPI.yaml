@@ -5,7 +5,7 @@ info:
   description: API sencilla para aprender a crear APIs REST con OpenAPI documents\
     \ en SWAGGER y a implementarlos con Python-Flask
   version: 1.0.0
-  title: API Cansion
+  title: API Cancion
 
 host: localhost:8080
 
