@@ -6,6 +6,5 @@ As Kanye West said:
 > We're living the future so
 > the present is our past.
 
-![WTF](http://www.poker10la.com/wp-content/uploads/2017/03/WTF.jpg)
-Format: ![Alt Text](url)
+![WTF](https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAdeAAAAJDg2OTJjNTc5LWQyMmUtNDMyYy05ZTA4LWVjNDA1MGYyMWQ1MQ.jpg)
 
