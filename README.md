@@ -27,5 +27,4 @@ def conectar():
     return conexion
 ```
 
-![Alt text](./modelo.svg)
-<img src="./modelo.svg">
+![Alt text](./modelo.png)
