@@ -26,5 +26,3 @@ def conectar():
     )
     return conexion
 ```
-
-![Alt text](./modelo.png)
